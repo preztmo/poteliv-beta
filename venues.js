@@ -17,8 +17,8 @@ export const venues = [
     rating: 5,
     reviewCount: 42,
     amenities: ['vannskaal', 'hundegodteri', 'uteservering', 'lov_innendors'],
-    blurb: 'Populær kombinasjon av restaurant og håndverksølbar hvor hunder er velkomne.'
-    photo: 'https://gotobooking.imgix.net/product_images/882/3EqWEDFwpUyezbYe9C8pL1nCAvT?w=1200&fit=max&auto=format,compress,
+    blurb: 'Populær kombinasjon av restaurant og håndverksølbar hvor hunder er velkomne.',
+    photo: 'https://gotobooking.imgix.net/product_images/882/3EqWEDFwpUyezbYe9C8pL1nCAvT?w=1200&fit=max&auto=format,compress',
     website: 'https://www.visitoslo.com/eat/crafty-dog',
     instagram: 'https://www.instagram.com/craftydogoslo/',
   },
