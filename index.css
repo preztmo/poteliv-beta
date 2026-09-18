@@ -283,12 +283,6 @@ main {
   color: var(--color-ink-soft);
 }
 
-/* ---------- Stars ---------- */
-.star-rating { letter-spacing: 1px; }
-.star { color: var(--color-line); font-size: 1rem; }
-.star--filled { color: var(--color-mustard); }
-.star-rating--sm .star { font-size: 0.8rem; }
-
 /* ---------- Venue detail ---------- */
 .back-link {
   display: inline-block;

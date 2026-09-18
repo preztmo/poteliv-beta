@@ -15,7 +15,6 @@ export const venues = [
     lat: 59.9229,
     lng: 10.7589,
     
-    reviewCount: 42,
     amenities: ['vannskaal', 'hundegodteri', 'uteservering', 'lov_innendors'],
     blurb: 'Populær kombinasjon av restaurant og håndverksølbar hvor hunder er velkomne.',
     photo: 'https://gotobooking.imgix.net/product_images/882/3EqWEDFwpUyezbYe9C8pL1nCAvT?w=1200&fit=max&auto=format,compress',
@@ -29,8 +28,6 @@ export const venues = [
     address: 'Trondheimsveien 2, 0560 Oslo',
     lat: 59.9184,
     lng: 10.7194,
-    
-    reviewCount: 27,
     amenities: ['uteservering', 'inneservering', 'vannskaal'],
     blurb: 'Hunden er velkommen på denne stilige baren i bunnen av Grünerløkka.',
     photo: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?w=800&q=80',
@@ -44,8 +41,6 @@ export const venues = [
     address: 'Waldemar Thranes gate 1a, 0171 Oslo',
     lat: 59.9247,
     lng: 10.7583,
-    
-    reviewCount: 19,
     amenities: ['lov_innendors', 'vannskaal'],
     blurb: 'Kul og avslappet nabolagsbar der stamgjestene ofte har med bikkja under bordet. På grunn av høy lyd er det ikke lov med hund etter kl. 22.00.',
     photo: 'https://scontent.fosl5-1.fna.fbcdn.net/v/t39.30808-6/486622948_1201648098629130_3316908954405969458_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1238&ctp=s2048x1238&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=PStBxyy44NEQ7kNvwE4y2Xs&_nc_oc=AdonM2QLO4Jb8leSTx29TpYRSpRRlDczohs1KNsIYGdsMW1Un2rWoVrPMS0mOLvo948&_nc_zt=23&_nc_ht=scontent.fosl5-1.fna&_nc_gid=s42nNNM4UtaM4Qc9Tx71mQ&_nc_ss=7b2a8&oh=00_AQIXRVmW57-v8rx7K0sd3_qmQu3z1gf8pkAZ3BBi4Htxjg&oe=6AB15DCF',
@@ -59,8 +54,6 @@ export const venues = [
     address: 'Bogstadveien 21, 0355 Oslo',
     lat: 59.9276,
     lng: 10.7157,
-    
-    reviewCount: 63,
     amenities: ['vannskaal', 'hundegodteri', 'lov_innendors'],
     blurb: 'Dyrebutikk hvor hunden får prøvesmake godbiter i kassa.',
     photo: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&q=80',
@@ -74,8 +67,6 @@ export const venues = [
     address: 'Damstredet 8, 0177 Oslo',
     lat: 59.9219,
     lng: 10.7495,
-    
-    reviewCount: 11,
     amenities: ['uteservering'],
     blurb: 'Hyggelig uteservering i solveggen, men trangt å komme forbi innendørs.',
     photo: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80',
@@ -89,8 +80,6 @@ export const venues = [
     address: 'Rådhusbrygge 2, 0250 Oslo',
     lat: 59.9106,
     lng: 10.7325,
-    
-    reviewCount: 34,
     amenities: ['uteservering', 'vannskaal', 'lov_innendors'],
     blurb: 'Store lokaler med god avstand mellom bordene, populært blant hundeeiere på tur langs sjøen.',
     photo: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
@@ -104,8 +93,6 @@ category: 'cafe',
 address: 'Flere lokasjoner i Oslo',
 lat: 59.9139,
 lng: 10.7522,
-
-
 amenities: ['lov_innendors'],
 blurb: 'Alle Espresso House-kafeer ønsker hunder velkommen innendørs, men anbefaler å sjekke retningslinjene dersom ditt nærmeste Espresso House ligger i et kjøpesenter.',
 photo: '',
@@ -119,8 +106,6 @@ category: 'restaurant',
 address: 'Grundingen 3, 0250 Oslo',
 lat: 59.9106,
 lng: 10.7278,
-
-
 amenities: ['lov_innendors'],
 blurb: 'Winther opplyser at hunder er velkomne på alle restaurantene deres.',
 photo: '',
@@ -134,8 +119,6 @@ category: 'restaurant',
 address: 'Middelthunsgate 17P, 0368 Oslo',
 lat: 59.9318,
 lng: 10.7084,
-
-
 amenities: ['lov_innendors'],
 blurb: 'Winther opplyser at hunder er velkomne på alle restaurantene deres.',
 photo: '',
@@ -149,8 +132,6 @@ category: 'cafe',
 address: 'Økernveien 9, 0653 Oslo',
 lat: 59.9155,
 lng: 10.7782,
-
-
 amenities: ['lov_innendors'],
 blurb: 'Populær kaffebar hvor gjester rapporterer at hunder er velkomne innendørs.',
 photo: '',

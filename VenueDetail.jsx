@@ -32,11 +32,6 @@ export default function VenueDetail() {
           <div className="venue-detail__heading">
             <span className="venue-card__category">{categoryLabel}</span>
             <h1>{venue.name}</h1>
-            <div className="venue-detail__rating">
-              <span>
-                {venue.rating} av 5 – hundevennlighet ({venue.reviewCount} vurderinger)
-              </span>
-            </div>
           </div>
 
           <p className="venue-detail__blurb">{venue.blurb}</p>
