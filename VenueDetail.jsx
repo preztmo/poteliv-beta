@@ -1,6 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
 import { venues, CATEGORIES, AMENITY_LABELS } from './venues.js'
-import StarRating from './StarRating.jsx'
 import MapView from './MapView.jsx'
 import DirectionsButton from './DirectionsButton.jsx'
 import AdSlot from './AdSlot.jsx'
@@ -34,7 +33,6 @@ export default function VenueDetail() {
             <span className="venue-card__category">{categoryLabel}</span>
             <h1>{venue.name}</h1>
             <div className="venue-detail__rating">
-              <StarRating rating={venue.rating} />
               <span>
                 {venue.rating} av 5 – hundevennlighet ({venue.reviewCount} vurderinger)
               </span>
