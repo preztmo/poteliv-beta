@@ -10,6 +10,7 @@ export default function Home() {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState(null)
   const [view, setView] = useState('liste') // liste | kart
+  const [showAll, setShowAll] = useState(false)
 
   const filtered = useMemo(() => {
     return venues.filter((v) => {
@@ -49,14 +50,23 @@ export default function Home() {
         <MapView venues={filtered} height={480} />
       ) : (
         <div className="venue-grid">
-          {filtered.map((v, i) => (
+          {(showAll ? filtered : filtered.slice(0, 6)).map((v, i) => (
             <Fragment key={v.id}>
               <VenueCard venue={v} />
               {i === 2 && <AdSlot />}
             </Fragment>
           ))}
-        </div>
-      )}
-    </div>
-  )
+          {filtered.length>6 && (
+            <div style = {{textAlign: 'center', marginTop: '24px'}}>
+              <button onClick = {()=>setShowAll(!showAll)}>
+                {showAll?'Vis færre steder':'Se alle steder'}
+                </button>
+                </div>
+              )}
+
+              </div>
+      )
+    }
+  </div>
+)
 }
