@@ -26,7 +26,7 @@ export default function Home() {
       <section className="hero">
         <h1>Finn steder der hunden din er like velkommen som deg</h1>
         <p>
-          Snuten samler kafeer, restauranter, barer og butikker der hunden får bli med inn –
+          Poteliv samler kafeer, restauranter, barer og butikker der hunden får bli med inn –
           vurdert av andre hundeeiere.
         </p>
         <SearchBar value={query} onChange={setQuery} />
@@ -57,8 +57,8 @@ export default function Home() {
             </Fragment>
           ))}
           {filtered.length>6 && (
-            <div style = {{textAlign: 'center', marginTop: '24px'}}>
-              <button onClick = {()=>setShowAll(!showAll)}>
+            <div style = {{display: 'flex', justifyContent: 'center', marginTop: '40px'}}>
+              <button className="chip chip--active" onClick = {()=>setShowAll(!showAll)}>
                 {showAll?'Vis færre steder':'Se alle steder'}
                 </button>
                 </div>
