@@ -1,6 +1,6 @@
 // Eksempeldata. Bytt ut med kall til eget API/database når dere har det klart.
 export const CATEGORIES = [
-  { id: 'kafe', label: 'Kafé' },
+  { id: 'cafe', label: 'Kafé' },
   { id: 'restaurant', label: 'Restaurant' },
   { id: 'bar', label: 'Bar' },
   { id: 'butikk', label: 'Butikk' },
