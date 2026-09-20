@@ -47,7 +47,7 @@ export default function Home() {
       {filtered.length === 0 ? (
         <p className="empty-state">Ingen treff. Prøv et annet søk eller en annen kategori.</p>
       ) : view === 'kart' ? (
-        <MapView venues={filtered} height={480} />
+        <MapView venues={venues} height={480} />
       ) : (
         <div className="venue-grid">
           {(showAll ? filtered : filtered.slice(0, 6)).map((v, i) => (
@@ -65,6 +65,7 @@ export default function Home() {
               )}
 
               </div>
+              
       )
     }
   </div>

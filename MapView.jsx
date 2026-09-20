@@ -13,9 +13,10 @@ const pin = L.divIcon({
 })
 
 export default function MapView({ venues, center, zoom = 13, height = 360 }) {
+  const validVenues = venues.filter (v => v.lat && v.lng)
   const mapCenter = center ?? [
-    venues.reduce((s, v) => s + v.lat, 0) / venues.length,
-    venues.reduce((s, v) => s + v.lng, 0) / venues.length,
+    validVenues.reduce((s, v) => s + v.lat, 0) / validVenues.length,
+   validVenues.reduce((s, v) => s + v.lng, 0) / validVenues.length,
   ]
 
   return (
@@ -25,7 +26,7 @@ export default function MapView({ venues, center, zoom = 13, height = 360 }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {venues.map((v) => (
+        {validVenues.map((v) => (
           <Marker key={v.id} position={[v.lat, v.lng]} icon={pin}>
             <Popup>
               <strong>{v.name}</strong>
