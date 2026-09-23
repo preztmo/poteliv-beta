@@ -11,6 +11,21 @@ export default function Home() {
   const [category, setCategory] = useState(null)
   const [view, setView] = useState('liste') // liste | kart
   const [visibleCount, setVisibleCount] = useState(6);
+  const [userLocation, setUserLocation] = useState(null);
+
+  const findNearby = () => {
+navigator.geolocation.getCurrentPosition(
+(position) => {
+setUserLocation({
+lat: position.coords.latitude,
+lng: position.coords.longitude,
+});
+},
+(error) => {
+console.error(error);
+}
+);
+};
 
   const filtered = useMemo(() => {
     return venues.filter((v) => {
@@ -41,6 +56,9 @@ export default function Home() {
           <button className={view === 'kart' ? 'chip chip--active' : 'chip'} onClick={() => setView('kart')}>
             Kart
           </button>
+          <button className="chip chip--active" onClick={findNearby}>
+            📍 Nær meg
+            </button>
         </div>
       </div>
 
