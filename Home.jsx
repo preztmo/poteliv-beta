@@ -58,7 +58,7 @@ export default function Home() {
           ))}
           {visibleCount < filtered.length && (
             <div style = {{display: 'flex', justifyContent: 'center', marginTop: '40px'}}>
-              <button className="chip chip-active" onClick={() => setVisibleCount(prev => prev + 12)}>
+              <button className="chip chip--active" onClick={() => setVisibleCount(prev => prev + 12)}>
                 Se mer
                 </button>
                 </div>
