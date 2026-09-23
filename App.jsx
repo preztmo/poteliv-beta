@@ -12,7 +12,7 @@ export default function App() {
       <header className="site-header">
         <Link to="/" className="logo">
           <span className="logo-mark" aria-hidden="true">🐾</span>
-          Snuten
+          Poteliv
         </Link>
         <nav className="main-nav">
           <NavLink to="/" end className={({ isActive }) => (isActive ? 'active' : '')}>
@@ -40,9 +40,9 @@ export default function App() {
       <footer className="site-footer">
         <Newsletter />
         <p className="footer-fine">
-          Snuten er en uavhengig, gratis tjeneste for hundeeiere. Driver du et hundevennlig
+          Poteliv er en uavhengig, gratis tjeneste for hundeeiere. Driver du et hundevennlig
           sted?{' '}
-          <a href="mailto:hei@snuten.no">Meld det inn her</a>.
+          <a href="mailto:hei@poteliv.no">Meld det inn her</a>.
         </p>
       </footer>
     </div>
