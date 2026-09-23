@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom'
 import { CATEGORIES, AMENITY_LABELS } from './venues.js'
+const AMENITY_ICONS = {
+vannskaal: "💧",
+hundegodteri: "🦴",
+uteservering: "☀️",
+lov_innendors: "🏠",
+}
 
 export default function VenueCard({ venue }) {
   const categoryLabel = CATEGORIES.find((c) => c.id === venue.category)?.label ?? venue.category
@@ -16,7 +22,7 @@ export default function VenueCard({ venue }) {
         <p className="venue-card__address">{venue.address}</p>
         <ul className="venue-card__amenities">
           {venue.amenities.slice(0, 3).map((a) => (
-            <li key={a}>{AMENITY_LABELS[a]}</li>
+            <li key={a}>{AMENITY_ICONS[a]}</li>
           ))}
         </ul>
       </div>
