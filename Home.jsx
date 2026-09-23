@@ -50,7 +50,7 @@ export default function Home() {
         <MapView venues={venues} height={480} />
       ) : (
         <div className="venue-grid">
-          {(showAll ? filtered : filtered.slice(0, visibleCount)).map((v, i) => (
+          {filtered.slice(0, visibleCount).map((v, i) => (
             <Fragment key={v.id}>
               <VenueCard venue={v} />
               {i === 2 && <AdSlot />}
