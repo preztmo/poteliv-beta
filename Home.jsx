@@ -10,7 +10,7 @@ export default function Home() {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState(null)
   const [view, setView] = useState('liste') // liste | kart
-  const [showAll, setShowAll] = useState(false)
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const filtered = useMemo(() => {
     return venues.filter((v) => {
@@ -50,16 +50,16 @@ export default function Home() {
         <MapView venues={venues} height={480} />
       ) : (
         <div className="venue-grid">
-          {(showAll ? filtered : filtered.slice(0, 6)).map((v, i) => (
+          {(showAll ? filtered : filtered.slice(0, visibleCount)).map((v, i) => (
             <Fragment key={v.id}>
               <VenueCard venue={v} />
               {i === 2 && <AdSlot />}
             </Fragment>
           ))}
-          {filtered.length>6 && (
+          {visibleCount < filtered.length && (
             <div style = {{display: 'flex', justifyContent: 'center', marginTop: '40px'}}>
-              <button className="chip chip--active" onClick = {()=>setShowAll(!showAll)}>
-                {showAll?'Vis færre steder':'Se alle steder'}
+              <button className="chip chip-active" onClick={() => setVisibleCount(prev => prev + 12)}>
+                Se mer
                 </button>
                 </div>
               )}
