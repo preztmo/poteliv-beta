@@ -1,7 +1,15 @@
 {
 "rewrites": [
 {
-"source": "/((?!robots\\.txt|sitemap\\.xml|favicon\\.ico).*)",
+"source": "/om-oss",
+"destination": "/index.html"
+},
+{
+"source": "/venue/:path*",
+"destination": "/index.html"
+},
+{
+"source": "/articles/:path*",
 "destination": "/index.html"
 }
 ]
