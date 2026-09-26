@@ -21,16 +21,16 @@ style={{
 position: "fixed",
 bottom: "20px",
 right: "20px",
-width: "48px",
-height: "48px",
+width: "56px",
+height: "56px",
 borderRadius: "50%",
 border: "none",
-backgroundColor: "#22c55e",
-color: "white",
-fontSize: "24px",
+backgroundColor: "#24463a",
+color: "#fffdf7",
+fontSize: "28px",
 cursor: "pointer",
 zIndex: 1000,
-boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+boxShadow: "0 6px 16px rgba(22, 48, 42, 0.25)",
 }}
 aria-label="Til toppen"
 >
