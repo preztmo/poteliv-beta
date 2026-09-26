@@ -515,3 +515,18 @@ text-align: center;
 .instagram-button:hover {
 opacity: 0.9;
 }
+.share-button {
+display: block;
+margin: 1rem auto 2rem;
+padding: 0.9rem 1.8rem;
+background: var(--color-forest);
+color: var(--color-white);
+border: none;
+border-radius: 999px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+}
+.share-button:hover {
+opacity: 0.9;
+}
