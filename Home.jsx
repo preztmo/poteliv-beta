@@ -125,7 +125,7 @@ return results
 {filtered.slice(0, visibleCount).map((v, i) => (
 <Fragment key={v.id}>
 <VenueCard venue={v} />
-{(i + 1) % 12 === 0 && <AdSlot />}
+{(i === 2 || (i + 1) % 15 === 0) && <AdSlot />}
 </Fragment>
 ))}
 {visibleCount < filtered.length && (
