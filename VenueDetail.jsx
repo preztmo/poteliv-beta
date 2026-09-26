@@ -51,6 +51,13 @@ export default function VenueDetail() {
           <DirectionsButton venue={venue} />
         </div>
 
+        <button className="share-button" onClick={() => {if (navigator.share)
+        {navigator.share({title: venue.name, text: 
+          `Sjekk ut ${venue.name} på Poteliv 🐾`, url: window.location.href,});}
+}}>
+Del med en venn
+</button>
+
         <aside className="venue-detail__sidebar">
           <AdSlot label="Reklameplass" />
         </aside>
