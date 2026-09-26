@@ -5,6 +5,7 @@ import Articles from './Articles.jsx'
 import ArticleDetail from './ArticleDetail.jsx'
 import About from './About.jsx'
 import Newsletter from './Newsletter.jsx'
+import BackToTop from "./components/BackToTop";
 
 export default function App() {
   return (
@@ -45,6 +46,7 @@ export default function App() {
           <a href="mailto:hei@poteliv.no">Meld det inn her</a>.
         </p>
       </footer>
+      <BackToTop />
     </div>
   )
 }
