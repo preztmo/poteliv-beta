@@ -46,8 +46,8 @@ export default function App() {
         target="_blank" 
         rel="noopener noreferrer"
         className="instagram-button">
-          🐾 Følg oss på Instagram </a>
-          
+          Følg Poteliv på Instagram </a>
+
         <p className="footer-fine">
           Poteliv er en uavhengig, gratis tjeneste for hundeeiere. Driver du et hundevennlig
           sted?{' '}

@@ -502,7 +502,7 @@ text-decoration: underline;
 }
 .instagram-button {
 display: block;
-width: fit-content;
+width: max-content;
 margin: 1.5rem auto;
 padding: 0.9rem 1.8rem;
 background: var(--color-forest);
