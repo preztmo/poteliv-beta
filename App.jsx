@@ -47,12 +47,7 @@ export default function App() {
           sted?{' '}
           <a href="mailto:hei@poteliv.no">Meld det inn her</a>.
         </p>
-      </footer>
-      <BackToTop />
-    </div>
-  )
-}
-<a
+        <a
 href="https://instagram.com/potelivno"
 target="_blank"
 rel="noopener noreferrer"
@@ -60,3 +55,9 @@ className="instagram"
 >
 🐾 Følg oss på Instagram
 </a>
+      </footer>
+      <BackToTop />
+    </div>
+  )
+}
+
