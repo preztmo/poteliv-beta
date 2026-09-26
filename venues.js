@@ -3,7 +3,7 @@ export const CATEGORIES = [
   { id: 'cafe', label: 'Kafé' },
   { id: 'restaurant', label: 'Restaurant' },
   { id: 'bar', label: 'Bar' },
-  { id: 'butikk', label: 'Butikk' },
+  { id: 'hotell', label: 'Hotell' },
 ]
 
 export const venues = [
