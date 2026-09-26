@@ -105,25 +105,32 @@ return results
       ) : view === 'kart' ? (
         <MapView venues={venues} height={480} />
       ) : (
-        <div className="venue-grid">
-          {filtered.slice(0, visibleCount).map((v, i) => (
-            <Fragment key={v.id}>
-              <VenueCard venue={v} />
-              {i === 2 && <AdSlot />}
-            </Fragment>
-          ))}
-          {visibleCount < filtered.length && (
-            <div style = {{display: 'flex', justifyContent: 'center', marginTop: '40px'}}>
-              <button className="chip chip--active" onClick={() => setVisibleCount(prev => prev + 12)}>
-                Se mer
-                </button>
-                </div>
-              )}
-
-              </div>
-              
-      )
-    }
-  </div>
+<>
+<p className="results-count">
+{userLocation
+? `Viser de ${filtered.length} nærmeste hundevennlige stedene 🐾`
+: `Fant ${filtered.length} hundevennlige steder 🐾`}
+</p>
+<div className="venue-grid">
+{filtered.slice(0, visibleCount).map((v, i) => (
+<Fragment key={v.id}>
+<VenueCard venue={v} />
+{i === 2 && <AdSlot />}
+</Fragment>
+))}
+{visibleCount < filtered.length && (
+<div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+<button
+className="chip chip--active"
+onClick={() => setVisibleCount((prev) => prev + 12)}
+>
+Se mer
+</button>
+</div>
+)}
+</div>
+</>
+)}
+</div>
 )
 }
