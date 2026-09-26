@@ -55,7 +55,16 @@ return matchesCategory && matchesQuery
 })
 results.sort((a, b) => a.name.localeCompare(b.name, 'nb'))
 if (userLocation) {
-results.sort((a, b) => {
+const nearby = results.filter((v) => {
+const dist = distance(
+userLocation.lat,
+userLocation.lng,
+v.lat,
+v.lng
+)
+return dist <= 20
+})
+nearby.sort((a, b) => {
 const distA = distance(
 userLocation.lat,
 userLocation.lng,
@@ -70,6 +79,7 @@ b.lng
 )
 return distA - distB
 })
+return nearby
 }
 return results
 }, [query, category, userLocation])
