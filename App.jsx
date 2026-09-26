@@ -39,10 +39,10 @@ export default function App() {
       </main>
 
 <a
-href="https://instagram.com/poteliv.no"
+href="https://instagram.com/potelivno"
 target="_blank"
 rel="noopener noreferrer"
-className="https://www.instagram.com/potelivno/"
+className="instagram"
 >
 🐾 Følg Poteliv på Instagram
 </a>
