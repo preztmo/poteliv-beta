@@ -42,19 +42,17 @@ export default function App() {
 
       <footer className="site-footer">
         <Newsletter />
+        <a href="https://instagram.com/potelivno" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="instagram-button">
+          🐾 Følg oss på Instagram </a>
+          
         <p className="footer-fine">
           Poteliv er en uavhengig, gratis tjeneste for hundeeiere. Driver du et hundevennlig
           sted?{' '}
           <a href="mailto:hei@poteliv.no">Meld det inn her</a>.
         </p>
-        <a
-href="https://instagram.com/potelivno"
-target="_blank"
-rel="noopener noreferrer"
-className="instagram"
->
-🐾 Følg oss på Instagram
-</a>
       </footer>
       <BackToTop />
     </div>
