@@ -38,6 +38,15 @@ export default function App() {
         </Routes>
       </main>
 
+<a
+href="https://instagram.com/poteliv.no"
+target="_blank"
+rel="noopener noreferrer"
+className="https://www.instagram.com/potelivno/"
+>
+🐾 Følg Poteliv på Instagram
+</a>
+
       <footer className="site-footer">
         <Newsletter />
         <p className="footer-fine">
