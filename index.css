@@ -503,16 +503,15 @@ text-decoration: underline;
 .instagram-button {
 display: block;
 width: fit-content;
-margin: 1.5rem auto 2rem;
-padding: 0.9rem 1.5rem;
+margin: 1.5rem auto;
+padding: 0.9rem 1.8rem;
 background: var(--color-forest);
 color: var(--color-white);
-text-decoration: none;
 border-radius: 999px;
+text-decoration: none;
 font-weight: 600;
-transition: opacity 0.2s ease;
+text-align: center;
 }
- 
 .instagram-button:hover {
 opacity: 0.9;
 }
