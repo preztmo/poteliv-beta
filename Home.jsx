@@ -53,6 +53,7 @@ v.address.toLowerCase().includes(q)
 : true
 return matchesCategory && matchesQuery
 })
+results.sort((a, b) => a.name.localeCompare(b.name, 'nb'))
 if (userLocation) {
 results.sort((a, b) => {
 const distA = distance(
