@@ -6,6 +6,7 @@ import ArticleDetail from './ArticleDetail.jsx'
 import About from './About.jsx'
 import Newsletter from './Newsletter.jsx'
 import BackToTop from "./components/BackToTop";
+import TipUsButton from "./components/TipUsButton";
 import FAQ from "./FAQ";
 
 export default function App() {
@@ -59,6 +60,7 @@ export default function App() {
         </p>
       </footer>
       <BackToTop />
+      <TipUsButton />
     </div>
   )
 }

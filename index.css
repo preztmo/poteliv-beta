@@ -550,3 +550,16 @@ color: var(--color-forest);
 font-weight: 600;
 font-size: 1rem;
 }
+.tip-us-button {
+position: fixed;
+right: 20px;
+bottom: 90px;
+background: #5b7f60;
+color: white;
+padding: 12px 16px;
+border-radius: 999px;
+text-decoration: none;
+font-weight: 600;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+z-index: 1000;
+}
