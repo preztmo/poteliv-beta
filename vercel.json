@@ -1,15 +1,7 @@
 {
 "rewrites": [
 {
-"source": "/om-oss",
-"destination": "/index.html"
-},
-{
-"source": "/venue/:path*",
-"destination": "/index.html"
-},
-{
-"source": "/articles/:path*",
+"source": "/(.*)",
 "destination": "/index.html"
 }
 ]
