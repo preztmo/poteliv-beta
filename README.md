@@ -1,4 +1,4 @@
-# Snuten – hundevennlige steder
+# Poteliv – hundevennlige steder
 
 Prototype av en gratis app hvor hundeeiere kan søke opp kafeer, restauranter, barer og
 butikker der det er lov å ta med hund. Bygget som en React-app (Vite) med mock-data, klar

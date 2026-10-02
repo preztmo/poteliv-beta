@@ -1,17 +1,16 @@
-import { Fragment, useMemo, useState } from 'react'
 import { venues } from './venues.js'
 import VenueCard from './VenueCard.jsx'
 import SearchBar from './SearchBar.jsx'
 import FilterBar from './FilterBar.jsx'
 import MapView from './MapView.jsx'
 import AdSlot from './AdSlot.jsx'
+import { Fragment, useEffect, useMemo, useState } from 'react'
+import { supabase } from "./supabase";
 
 function distance(lat1, lon1, lat2, lon2) {
 const R = 6371
- 
 const dLat = (lat2 - lat1) * Math.PI / 180
 const dLon = (lon2 - lon1) * Math.PI / 180
- 
 const a =
 Math.sin(dLat / 2) * Math.sin(dLat / 2) +
 Math.cos(lat1 * Math.PI / 180) *
@@ -28,6 +27,7 @@ export default function Home() {
   const [view, setView] = useState('liste') // liste | kart
   const [visibleCount, setVisibleCount] = useState(6);
   const [userLocation, setUserLocation] = useState(null);
+  const [favoriteIds, setFavoriteIds] = useState([]);
 
   const findNearby = () => {
 navigator.geolocation.getCurrentPosition(
@@ -42,6 +42,20 @@ console.error(error);
 }
 );
 };
+useEffect(() => {
+const loadFavorites = async () => {
+const { data: authData } = await supabase.auth.getUser();
+if (!authData.user) return;
+const { data } = await supabase
+.from("Favorites")
+.select("venue_id")
+.eq("user_id", authData.user.id);
+if (data) {
+setFavoriteIds(data.map((f) => f.venue_id));
+}
+};
+loadFavorites();
+}, []);
 
   const filtered = useMemo(() => {
 const results = venues.filter((v) => {
@@ -124,7 +138,10 @@ return results
 <div className="venue-grid">
 {filtered.slice(0, visibleCount).map((v, i) => (
 <Fragment key={v.id}>
-<VenueCard venue={v} />
+<VenueCard
+venue={v}
+isFavorite={favoriteIds.includes(v.id)}
+/>
 {(i === 2 || (i + 1) % 15 === 0) && <AdSlot />}
 </Fragment>
 ))}

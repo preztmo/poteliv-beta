@@ -260,6 +260,10 @@ text-decoration: underline;
   margin-bottom: 0.4rem;
 }
 
+.venue-card__favorite {
+font-size: 1.2rem;
+}
+
 .venue-card__category {
   font-size: 0.75rem;
   font-weight: 700;

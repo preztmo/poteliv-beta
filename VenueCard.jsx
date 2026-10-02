@@ -7,7 +7,7 @@ uteservering: "☀️",
 lov_innendors: "🏠",
 }
 
-export default function VenueCard({ venue }) {
+export default function VenueCard({ venue, isFavorite }) {
   const categoryLabel = CATEGORIES.find((c) => c.id === venue.category)?.label ?? venue.category
 
   return (
@@ -15,9 +15,13 @@ export default function VenueCard({ venue }) {
       <div className="venue-card__photo" style={{ backgroundImage: `url(${venue.photo})` }} />
       <div className="venue-card__body">
         <div className="venue-card__top">
-          <span className="venue-card__category">{categoryLabel}</span>
-          
-        </div>
+<span className="venue-card__category">
+{categoryLabel}
+</span>
+<span className="venue-card__favorite">
+{isFavorite ? "♥" : "♡"}
+</span>
+</div>
         <h3>{venue.name}</h3>
         <p className="venue-card__address">{venue.address}</p>
         <ul className="venue-card__amenities">
