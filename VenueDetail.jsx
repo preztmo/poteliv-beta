@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { venues, CATEGORIES, AMENITY_LABELS } from './venues.js'
+import { supabase } from './supabase'
 import MapView from './MapView.jsx'
 import DirectionsButton from './DirectionsButton.jsx'
 import AdSlot from './AdSlot.jsx'
@@ -7,6 +9,48 @@ import AdSlot from './AdSlot.jsx'
 export default function VenueDetail() {
   const { id } = useParams()
   const venue = venues.find((v) => v.id === id)
+  const [user, setUser] = useState(null)
+  const [isFavorite, setIsFavorite] = useState(false)
+  useEffect(() => {
+    const loadFavorite = async () => {
+      const { data: authData } = await supabase.auth.getUser()
+      if (!authData.user) return
+      setUser(authData.user)
+      const { data } = await supabase
+      .from('Favorites')
+      .select('*')
+      .eq('user_id', authData.user.id)
+      .eq('venue_id', id)
+      .single()
+      if (data) {
+        setIsFavorite(true)
+      }
+    }
+loadFavorite()
+}, [id])
+
+const toggleFavorite = async () => {
+  if (!user) {
+    alert("Logg inn for å lagre favoritter ❤️")
+    return
+  }
+  if (isFavorite) {
+    await supabase
+    .from('Favorites')
+    .delete()
+    .eq('user_id', user.id)
+    .eq('venue_id', id)
+    setIsFavorite(false)
+  } else {
+    await supabase
+    .from('Favorites')
+    .insert({
+      user_id: user.id,
+      venue_id: id,
+    })
+    setIsFavorite(true)
+  }
+}
 
   if (!venue) {
     return (
@@ -35,6 +79,12 @@ export default function VenueDetail() {
           </div>
 
           <p className="venue-detail__blurb">{venue.blurb}</p>
+<button
+className="favorite-button"
+onClick={toggleFavorite}
+>
+{isFavorite ? "♥ Lagret" : "♡ Lagre som favoritt"}
+</button>
 
           <h2>Fasiliteter</h2>
           <ul className="amenity-list">
