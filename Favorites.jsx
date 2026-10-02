@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./supabase";
 import { venues } from "./venues";
-import { Link } from "react-router-dom";
+import VenueCard from './VenueCard.jsx'
+
 export default function Favorites() {
 const [favorites, setFavorites] = useState([]);
 useEffect(() => {
@@ -26,13 +27,14 @@ return (
 {favorites.length === 0 ? (
 <p>Du har ingen favoritter ennå.</p>
 ) : (
-favorites.map((venue) => (
-<div key={venue.id}>
-<Link to={`/sted/${venue.id}`}>
-{venue.name}
-</Link>
+<div className="venue-grid">
+    {favorites.map((venue) => (
+        <VenueCard
+        key={venue.id}
+        venue={venue}
+        />
+        ))}
 </div>
-))
 )}
 </div>
 );
