@@ -38,12 +38,14 @@ export default function VenueDetail() {
 
           <h2>Fasiliteter</h2>
           <ul className="amenity-list">
-            {Object.entries(AMENITY_LABELS).map(([key, label]) => (
-              <li key={key} className={venue.amenities.includes(key) ? 'has-it' : 'missing-it'}>
-                {label}
+            {Object.entries(AMENITY_LABELS)
+            .filter(([key]) => venue.amenities.includes(key))
+            .map(([key, label]) => (
+            <li key={key} className="has-it">
+              {label}
               </li>
             ))}
-          </ul>
+</ul>
 
           <h2>Kart og veibeskrivelse</h2>
           <MapView venues={[venue]} center={[venue.lat, venue.lng]} zoom={15} height={280} />
