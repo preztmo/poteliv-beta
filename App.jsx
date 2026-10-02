@@ -6,6 +6,7 @@ import ArticleDetail from './ArticleDetail.jsx'
 import About from './About.jsx'
 import Newsletter from './Newsletter.jsx'
 import BackToTop from "./components/BackToTop";
+import FAQ from "./FAQ";
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="/artikler" element={<Articles />} />
           <Route path="/artikler/:id" element={<ArticleDetail />} />
           <Route path="/om-oss" element={<About />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </main>
 
@@ -47,7 +49,9 @@ export default function App() {
         rel="noopener noreferrer"
         className="instagram-button">
           Følg Poteliv på Instagram </a>
-
+<div className="footer-links">
+<Link to="/faq">FAQ</Link>
+</div>
         <p className="footer-fine">
           Poteliv er en uavhengig, gratis tjeneste for hundeeiere. Driver du et hundevennlig
           sted?{' '}

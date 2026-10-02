@@ -135,7 +135,20 @@ main {
   background: var(--color-bg-alt);
   padding: clamp(1.5rem, 4vw, 3rem);
 }
-
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 1rem;
+margin: 1rem 0;
+}
+.footer-links a {
+color: var(--color-ink);
+font-weight: 600;
+text-decoration: none;
+}
+.footer-links a:hover {
+text-decoration: underline;
+}
 .footer-fine {
   max-width: var(--content-width);
   margin: 1.5rem auto 0;
