@@ -262,6 +262,11 @@ text-decoration: underline;
 
 .venue-card__favorite {
 font-size: 1.2rem;
+color: var(--color-accent);
+}
+
+.venue-card__favorite--active {
+color: var(--color-accent);
 }
 
 .venue-card__category {
