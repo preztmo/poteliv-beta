@@ -9,6 +9,7 @@ import Newsletter from './Newsletter.jsx'
 import BackToTop from "./components/BackToTop";
 import TipUsButton from "./components/TipUsButton";
 import FAQ from "./FAQ";
+import Favorites from "./Favorites";
 
 export default function App() {
   return (
@@ -28,6 +29,12 @@ export default function App() {
           <NavLink to="/om-oss" className={({ isActive }) => (isActive ? 'active' : '')}>
             Om oss
           </NavLink>
+          <NavLink
+          to="/favoritter"
+          className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            ♡ Favoritter
+            </NavLink>
           <GoogleLogin />
         </nav>
       </header>
@@ -40,6 +47,7 @@ export default function App() {
           <Route path="/artikler/:id" element={<ArticleDetail />} />
           <Route path="/om-oss" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/favoritter" element={<Favorites />} />
         </Routes>
       </main>
 
