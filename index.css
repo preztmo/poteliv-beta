@@ -584,3 +584,11 @@ padding: 0;
 .login-button:hover {
 text-decoration: underline;
 }
+.back-link {
+background: none;
+border: none;
+padding: 0;
+cursor: pointer;
+font: inherit;
+color: inherit;
+}

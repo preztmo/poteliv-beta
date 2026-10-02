@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { venues, CATEGORIES, AMENITY_LABELS } from './venues.js'
 import { supabase } from './supabase'
 import MapView from './MapView.jsx'
@@ -8,6 +8,7 @@ import AdSlot from './AdSlot.jsx'
 
 export default function VenueDetail() {
   const { id } = useParams()
+  const navigate = useNavigate()
   const venue = venues.find((v) => v.id === id)
   const [user, setUser] = useState(null)
   const [isFavorite, setIsFavorite] = useState(false)
@@ -65,9 +66,12 @@ const toggleFavorite = async () => {
 
   return (
     <div className="page page--venue">
-      <Link to="/" className="back-link">
-        ← Tilbake til søk
-      </Link>
+      <button
+className="back-link"
+onClick={() => navigate(-1)}
+>
+← Tilbake til søk
+</button>
 
       <div className="venue-detail">
         <div className="venue-detail__main">
