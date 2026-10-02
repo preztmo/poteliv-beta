@@ -1,3 +1,4 @@
+import GoogleLogin from './GoogleLogin'
 import { Routes, Route, Link, NavLink } from 'react-router-dom'
 import Home from './Home.jsx'
 import VenueDetail from './VenueDetail.jsx'
@@ -27,6 +28,7 @@ export default function App() {
           <NavLink to="/om-oss" className={({ isActive }) => (isActive ? 'active' : '')}>
             Om oss
           </NavLink>
+          <GoogleLogin />
         </nav>
       </header>
 

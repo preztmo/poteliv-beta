@@ -1,5 +1,4 @@
 import { supabase } from "./supabase";
-import GoogleLogin from './GoogleLogin'
 export default function GoogleLogin() {
 const handleLogin = async () => {
 await supabase.auth.signInWithOAuth({
