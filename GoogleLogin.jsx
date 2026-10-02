@@ -19,7 +19,8 @@ setUser(null);
 if (user) {
 return (
 <button onClick={handleLogout} className="login-button">
-{user.user_metadata?.full_name || user.email}
+<span style={{ fontSize: "1.1rem" }}>♡</span>{" "}
+{user.user_metadata?.full_name?.split(" ")[0] || user.email}
 </button>
 );
 }
