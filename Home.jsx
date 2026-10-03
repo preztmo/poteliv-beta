@@ -6,6 +6,7 @@ import MapView from './MapView.jsx'
 import AdSlot from './AdSlot.jsx'
 import { Fragment, useEffect, useMemo, useState } from 'react'
 import { supabase } from "./supabase";
+import { useSearchParams } from 'react-router-dom'
 
 function distance(lat1, lon1, lat2, lon2) {
 const R = 6371
@@ -22,12 +23,17 @@ return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 }
 
 export default function Home() {
-  const [query, setQuery] = useState('')
-  const [category, setCategory] = useState(null)
+  const [query, setQuery] = useState(
+searchParams.get('q') || ''
+)
+const [category, setCategory] = useState(
+searchParams.get('category') || null
+)
   const [view, setView] = useState('liste') // liste | kart
   const [visibleCount, setVisibleCount] = useState(6);
   const [userLocation, setUserLocation] = useState(null);
   const [favoriteIds, setFavoriteIds] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams()
 
   const findNearby = () => {
 navigator.geolocation.getCurrentPosition(
@@ -56,7 +62,16 @@ setFavoriteIds(data.map((f) => f.venue_id));
 };
 loadFavorites();
 }, []);
-
+useEffect(() => {
+const params = {}
+if (query) {
+params.q = query
+}
+if (category) {
+params.category = category
+}
+setSearchParams(params)
+}, [query, category, setSearchParams])
   const filtered = useMemo(() => {
 const results = venues.filter((v) => {
 const matchesCategory = category ? v.category === category : true
