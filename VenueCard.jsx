@@ -27,9 +27,15 @@ window.scrollY
 <span className="venue-card__category">
 {categoryLabel}
 </span>
-<span className="venue-card__favorite">
+<button
+className="venue-card__favorite"
+onClick={(e) => {
+e.preventDefault();
+e.stopPropagation();
+}}
+>
 {isFavorite ? "♥" : "♡"}
-</span>
+</button>
 </div>
         <h3>{venue.name}</h3>
         <p className="venue-card__address">{venue.address}</p>
