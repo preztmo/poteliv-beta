@@ -65,6 +65,8 @@ if (data) {
 setFavoriteIds(data.map((f) => f.venue_id));
 }
 };
+loadFavorites();
+}, []);
 useEffect(() => {
 const savedLocation = sessionStorage.getItem(
 "userLocation"
@@ -74,8 +76,6 @@ setUserLocation(
 JSON.parse(savedLocation)
 );
 }
-}, []);
-loadFavorites();
 }, []);
 useEffect(() => {
 const params = {}
