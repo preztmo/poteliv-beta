@@ -11,7 +11,16 @@ export default function VenueCard({ venue, isFavorite }) {
   const categoryLabel = CATEGORIES.find((c) => c.id === venue.category)?.label ?? venue.category
 
   return (
-    <Link to={`/sted/${venue.id}`} className="venue-card">
+    <Link
+to={`/sted/${venue.id}`}
+className="venue-card"
+onClick={() => {
+sessionStorage.setItem(
+"scrollPosition",
+window.scrollY
+);
+}}
+>
       <div className="venue-card__photo" style={{ backgroundImage: `url(${venue.photo})` }} />
       <div className="venue-card__body">
         <div className="venue-card__top">

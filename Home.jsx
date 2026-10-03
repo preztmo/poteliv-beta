@@ -78,6 +78,21 @@ JSON.parse(savedLocation)
 );
 }
 }, []);
+
+useEffect(() => {
+const savedScroll = sessionStorage.getItem(
+"scrollPosition"
+);
+if (savedScroll) {
+setTimeout(() => {
+window.scrollTo(
+0,
+Number(savedScroll)
+);
+}, 100);
+}
+}, []);
+
 useEffect(() => {
 const params = {}
 if (query) {
