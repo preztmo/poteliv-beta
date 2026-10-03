@@ -240,7 +240,14 @@ isFavorite={favoriteIds.includes(v.id)}
 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
 <button
 className="chip chip--active"
-onClick={() => setVisibleCount((prev) => prev + 12)}
+onClick={() => {
+const newCount = visibleCount + 12;
+setVisibleCount(newCount);
+sessionStorage.setItem(
+"visibleCount",
+newCount
+);
+}}
 >
 Se mer
 </button>
