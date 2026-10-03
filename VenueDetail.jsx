@@ -12,6 +12,7 @@ export default function VenueDetail() {
   const venue = venues.find((v) => v.id === id)
   const [user, setUser] = useState(null)
   const [isFavorite, setIsFavorite] = useState(false)
+  const [favoriteCount, setFavoriteCount] = useState(0)
   useEffect(() => {
     const loadFavorite = async () => {
       const { data: authData } = await supabase.auth.getUser()
@@ -26,6 +27,11 @@ export default function VenueDetail() {
       if (data) {
         setIsFavorite(true)
       }
+      const { count } = await supabase
+.from("Favorites")
+.select("*", { count: "exact", head: true })
+.eq("venue_id", id)
+setFavoriteCount(count || 0)
     }
 loadFavorite()
 }, [id])

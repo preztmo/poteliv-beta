@@ -631,3 +631,8 @@ margin-bottom: 3rem;
 .popular-section h2 {
 margin-bottom: 1rem;
 }
+.favorite-count {
+color: var(--color-accent);
+font-size: 0.95rem;
+margin-top: 0.5rem;
+}
