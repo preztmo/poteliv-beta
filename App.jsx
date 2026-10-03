@@ -29,12 +29,7 @@ export default function App() {
           <NavLink to="/om-oss" className={({ isActive }) => (isActive ? 'active' : '')}>
             Om oss
           </NavLink>
-          <NavLink
-          to="/favoritter"
-          className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            ♡ Favoritter
-            </NavLink>
+
           <GoogleLogin />
         </nav>
       </header>
