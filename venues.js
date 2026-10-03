@@ -42,7 +42,7 @@ export const venues = [
     lng: 10.7583,
     amenities: ['lov_innendors', 'vannskaal'],
     blurb: 'Kul og avslappet nabolagsbar der stamgjestene ofte har med bikkja under bordet. På grunn av høy lyd er det ikke lov med hund etter kl. 22.00.',
-    photo: 'https://scontent.fosl5-1.fna.fbcdn.net/v/t39.30808-6/486622948_1201648098629130_3316908954405969458_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1238&ctp=s2048x1238&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=PStBxyy44NEQ7kNvwE4y2Xs&_nc_oc=AdonM2QLO4Jb8leSTx29TpYRSpRRlDczohs1KNsIYGdsMW1Un2rWoVrPMS0mOLvo948&_nc_zt=23&_nc_ht=scontent.fosl5-1.fna&_nc_gid=s42nNNM4UtaM4Qc9Tx71mQ&_nc_ss=7b2a8&oh=00_AQIXRVmW57-v8rx7K0sd3_qmQu3z1gf8pkAZ3BBi4Htxjg&oe=6AB15DCF',
+    photo: 'https://parksalongen.no/wp-content/uploads/2019/10/basement.jpg',
     website: 'https://parksalongen.no/',
     instagram: 'https://www.instagram.com/parksalongenbar/',
   },

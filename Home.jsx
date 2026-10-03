@@ -189,6 +189,21 @@ return results
           vurdert av andre hundeeiere.
         </p>
         <SearchBar value={query} onChange={setQuery} />
+        {(query || category || userLocation) && (
+<button
+className="chip"
+onClick={() => {
+setQuery("");
+setCategory(null);
+setUserLocation(null);
+sessionStorage.removeItem("userLocation");
+sessionStorage.removeItem("scrollPosition");
+sessionStorage.removeItem("visibleCount");
+}}
+>
+✕ Nullstill filtre
+</button>
+)}
       </section>
 
 
