@@ -38,7 +38,7 @@ loadFavorite()
 
 const toggleFavorite = async () => {
   if (!user) {
-    alert("Logg inn for å lagre favoritter ❤️")
+    alert("Logg inn for å lagre favoritter ♥")
     return
   }
   if (isFavorite) {
@@ -95,6 +95,15 @@ onClick={toggleFavorite}
 >
 {isFavorite ? "♥ Lagret" : "♡ Lagre som favoritt"}
 </button>
+<p
+style={{
+color: "red",
+fontSize: "24px",
+fontWeight: "bold",
+}}
+>
+TEST FAVORITTER {favoriteCount}
+</p>
 
           <h2>Fasiliteter</h2>
           <ul className="amenity-list">
