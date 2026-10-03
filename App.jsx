@@ -9,6 +9,8 @@ import Newsletter from './Newsletter.jsx'
 import BackToTop from "./components/BackToTop";
 import TipUsButton from "./components/TipUsButton";
 import FAQ from "./FAQ";
+import Personvern from "./Personvern";
+import Vilkar from "./Vilkar";
 import Favorites from "./Favorites";
 import Popular from "./Popular";
 
@@ -45,6 +47,8 @@ export default function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/favoritter" element={<Favorites />} />
           <Route path="/populaere" element={<Popular />} />
+          <Route path="/personvern" element={<Personvern />} />
+          <Route path="/vilkar" element={<Vilkar />} />
         </Routes>
       </main>
 
@@ -59,6 +63,12 @@ export default function App() {
           Følg Poteliv på Instagram </a>
 <div className="footer-links">
 <Link to="/faq">FAQ</Link>
+<Link to="/personvern">
+Personvern
+</Link>
+<Link to="/vilkar">
+Vilkår
+</Link>
 </div>
         <p className="footer-fine">
           Poteliv er en uavhengig, gratis tjeneste for hundeeiere. Driver du et hundevennlig
