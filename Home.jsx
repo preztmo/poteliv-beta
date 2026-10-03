@@ -38,10 +38,15 @@ searchParams.get('category') || null
   const findNearby = () => {
 navigator.geolocation.getCurrentPosition(
 (position) => {
-setUserLocation({
+const location = {
 lat: position.coords.latitude,
 lng: position.coords.longitude,
-});
+};
+setUserLocation(location);
+sessionStorage.setItem(
+"userLocation",
+JSON.stringify(location)
+);
 },
 (error) => {
 console.error(error);
@@ -60,6 +65,16 @@ if (data) {
 setFavoriteIds(data.map((f) => f.venue_id));
 }
 };
+useEffect(() => {
+const savedLocation = sessionStorage.getItem(
+"userLocation"
+);
+if (savedLocation) {
+setUserLocation(
+JSON.parse(savedLocation)
+);
+}
+}, []);
 loadFavorites();
 }, []);
 useEffect(() => {
