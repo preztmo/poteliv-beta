@@ -34,6 +34,7 @@ searchParams.get('category') || null
   const [visibleCount, setVisibleCount] = useState(6);
   const [userLocation, setUserLocation] = useState(null);
   const [favoriteIds, setFavoriteIds] = useState([]);
+  const [popularVenues, setPopularVenues] = useState([]);
 
   const findNearby = () => {
 navigator.geolocation.getCurrentPosition(
@@ -87,6 +88,30 @@ params.category = category
 }
 setSearchParams(params)
 }, [query, category, setSearchParams])
+useEffect(() => {
+const loadPopularVenues = async () => {
+const { data, error } = await supabase
+.from("Favorites")
+.select("venue_id");
+if (error || !data) return;
+const counts = {};
+data.forEach((fav) => {
+counts[fav.venue_id] =
+(counts[fav.venue_id] || 0) + 1;
+});
+const topIds = Object.entries(counts)
+.sort((a, b) => b[1] - a[1])
+.slice(0, 3)
+.map(([id]) => id);
+const popular = topIds
+.map((id) =>
+venues.find((venue) => venue.id === id)
+)
+.filter(Boolean);
+setPopularVenues(popular);
+};
+loadPopularVenues();
+}, []);
   const filtered = useMemo(() => {
 const results = venues.filter((v) => {
 const matchesCategory = category ? v.category === category : true
@@ -139,6 +164,21 @@ return results
         <SearchBar value={query} onChange={setQuery} />
       </section>
 
+{popularVenues.length > 0 && (
+<section className="popular-section">
+<h2>🔥 Mest populære akkurat nå</h2>
+<div className="venue-grid">
+{popularVenues.map((venue) => (
+<VenueCard
+key={venue.id}
+venue={venue}
+isFavorite={favoriteIds.includes(venue.id)}
+/>
+))}
+</div>
+</section>
+)}
+
       <div className="toolbar">
         <FilterBar active={category} onChange={setCategory} />
         <div className="view-toggle" role="group" aria-label="Vis som">
@@ -151,6 +191,17 @@ return results
           <button className="chip chip--active" onClick={findNearby}>
             📍 Nær meg
             </button>
+            {userLocation && (
+<button
+className="chip"
+onClick={() => {
+setUserLocation(null);
+sessionStorage.removeItem("userLocation");
+}}
+>
+✕ Vis alle
+</button>
+)}
         </div>
       </div>
 

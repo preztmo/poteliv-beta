@@ -625,3 +625,9 @@ cursor: pointer;
 background: #f7f7f7;
 border-radius: 8px;
 }
+.popular-section {
+margin-bottom: 3rem;
+}
+.popular-section h2 {
+margin-bottom: 1rem;
+}
