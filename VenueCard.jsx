@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { CATEGORIES, AMENITY_LABELS } from './venues.js'
+import { useState } from 'react'
+import { supabase } from './supabase'
 const AMENITY_ICONS = {
 vannskaal: "💧",
 hundegodteri: "🦴",
@@ -8,7 +10,34 @@ lov_innendors: "🏠",
 }
 
 export default function VenueCard({ venue, isFavorite }) {
+  const [favorite, setFavorite] = useState(isFavorite)
   const categoryLabel = CATEGORIES.find((c) => c.id === venue.category)?.label ?? venue.category
+const toggleFavorite = async (e) => {
+e.preventDefault()
+e.stopPropagation()
+const { data: authData } =
+await supabase.auth.getUser()
+if (!authData.user) {
+alert("Logg inn for å lagre favoritter ♥")
+return
+}
+if (favorite) {
+await supabase
+.from("Favorites")
+.delete()
+.eq("user_id", authData.user.id)
+.eq("venue_id", venue.id)
+setFavorite(false)
+} else {
+await supabase
+.from("Favorites")
+.insert({
+user_id: authData.user.id,
+venue_id: venue.id,
+})
+setFavorite(true)
+}
+}
 
   return (
     <Link
@@ -29,12 +58,9 @@ window.scrollY
 </span>
 <button
 className="venue-card__favorite"
-onClick={(e) => {
-e.preventDefault();
-e.stopPropagation();
-}}
+onClick={toggleFavorite}
 >
-{isFavorite ? "♥" : "♡"}
+{favorite ? "♥" : "♡"}
 </button>
 </div>
         <h3>{venue.name}</h3>
