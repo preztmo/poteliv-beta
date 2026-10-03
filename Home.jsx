@@ -89,6 +89,8 @@ window.scrollTo(
 0,
 Number(savedScroll)
 );
+sessionStorage.removeItem("scrollPosition");
+sessionStorage.removeItem("visibleCount");
 }, 100);
 }
 }, []);
