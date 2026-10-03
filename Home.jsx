@@ -23,6 +23,7 @@ return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 }
 
 export default function Home() {
+  const [searchParams, setSearchParams] = useSearchParams()
   const [query, setQuery] = useState(
 searchParams.get('q') || ''
 )
@@ -33,7 +34,6 @@ searchParams.get('category') || null
   const [visibleCount, setVisibleCount] = useState(6);
   const [userLocation, setUserLocation] = useState(null);
   const [favoriteIds, setFavoriteIds] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams()
 
   const findNearby = () => {
 navigator.geolocation.getCurrentPosition(
