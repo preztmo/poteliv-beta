@@ -1,13 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "./supabase";
 export default function GoogleLogin() {
 const [user, setUser] = useState(null);
 const [menuOpen, setMenuOpen] = useState(false);
+const menuRef = useRef(null);
 useEffect(() => {
 supabase.auth.getUser().then(({ data }) => {
 setUser(data.user);
 });
+}, []);
+useEffect(() => {
+const handleClickOutside = (event) => {
+if (
+menuRef.current &&
+!menuRef.current.contains(event.target)
+) {
+setMenuOpen(false);
+}
+};
+document.addEventListener("mousedown", handleClickOutside);
+return () => {
+document.removeEventListener(
+"mousedown",
+handleClickOutside
+);
+};
 }, []);
 const handleLogin = async () => {
 await supabase.auth.signInWithOAuth({
@@ -20,7 +38,7 @@ setUser(null);
 };
 if (user) {
     return (
-    <div className="user-menu">
+    <div className="user-menu" ref={menuRef}>
         <button
         className="login-button"
         onClick={() => setMenuOpen(!menuOpen)}
