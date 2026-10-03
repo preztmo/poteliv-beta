@@ -14,6 +14,9 @@ export default function VenueDetail() {
   const [isFavorite, setIsFavorite] = useState(false)
   const [favoriteCount, setFavoriteCount] = useState(0)
   useEffect(() => {
+window.scrollTo(0, 0);
+}, [id]);
+  useEffect(() => {
     const loadFavorite = async () => {
       const { data: authData } = await supabase.auth.getUser()
       if (!authData.user) return
