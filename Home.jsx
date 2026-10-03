@@ -92,6 +92,8 @@ Number(savedScroll)
 sessionStorage.removeItem("scrollPosition");
 sessionStorage.removeItem("visibleCount");
 }, 100);
+} else {
+window.scrollTo(0, 0);
 }
 }, []);
 
