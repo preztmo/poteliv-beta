@@ -50,6 +50,9 @@ if (user) {
                     <Link to="/favoritter">
                     Mine favoritter
                     </Link>
+                    <Link to="/populaere">
+                    Populære steder
+                    </Link>
                     <button onClick={handleLogout}>
                         Logg ut
           </button>

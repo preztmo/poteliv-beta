@@ -164,20 +164,7 @@ return results
         <SearchBar value={query} onChange={setQuery} />
       </section>
 
-{popularVenues.length > 0 && (
-<section className="popular-section">
-<h2>🔥 Mest populære akkurat nå</h2>
-<div className="venue-grid">
-{popularVenues.map((venue) => (
-<VenueCard
-key={venue.id}
-venue={venue}
-isFavorite={favoriteIds.includes(venue.id)}
-/>
-))}
-</div>
-</section>
-)}
+
 
       <div className="toolbar">
         <FilterBar active={category} onChange={setCategory} />

@@ -10,6 +10,7 @@ import BackToTop from "./components/BackToTop";
 import TipUsButton from "./components/TipUsButton";
 import FAQ from "./FAQ";
 import Favorites from "./Favorites";
+import Popular from "./Popular";
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/om-oss" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/favoritter" element={<Favorites />} />
+          <Route path="/populaere" element={<Popular />} />
         </Routes>
       </main>
 
