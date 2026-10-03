@@ -41,22 +41,24 @@ const toggleFavorite = async () => {
     alert("Logg inn for å lagre favoritter ♥")
     return
   }
-  if (isFavorite) {
-    await supabase
-    .from('Favorites')
-    .delete()
-    .eq('user_id', user.id)
-    .eq('venue_id', id)
-    setIsFavorite(false)
-  } else {
-    await supabase
-    .from('Favorites')
-    .insert({
-      user_id: user.id,
-      venue_id: id,
-    })
-    setIsFavorite(true)
-  }
+ if (isFavorite) {
+await supabase
+.from('Favorites')
+.delete()
+.eq('user_id', user.id)
+.eq('venue_id', id)
+setIsFavorite(false)
+setFavoriteCount((prev) => Math.max(0, prev - 1))
+} else {
+await supabase
+.from('Favorites')
+.insert({
+user_id: user.id,
+venue_id: id,
+})
+setIsFavorite(true)
+setFavoriteCount((prev) => prev + 1)
+}
 }
 
   if (!venue) {
