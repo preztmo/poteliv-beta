@@ -592,3 +592,35 @@ cursor: pointer;
 font: inherit;
 color: inherit;
 }
+.user-menu {
+position: relative;
+}
+.user-dropdown {
+position: absolute;
+top: 100%;
+right: 0;
+background: white;
+border: 1px solid var(--color-line);
+border-radius: 12px;
+min-width: 180px;
+padding: 0.5rem;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+}
+.user-dropdown a,
+.user-dropdown button {
+display: block;
+width: 100%;
+padding: 0.75rem;
+background: none;
+border: none;
+text-align: left;
+text-decoration: none;
+color: inherit;
+cursor: pointer;
+}
+.user-dropdown a:hover,
+.user-dropdown button:hover {
+background: #f7f7f7;
+border-radius: 8px;
+}
