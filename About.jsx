@@ -8,7 +8,8 @@ address: "",
 category: "",
 website: "",
 instagram: "",
-dogs_inside: true,
+dogs_inside: false,
+dogs_outside: false,
 comment: "",
 });
 const [submitted, setSubmitted] = useState(false);
@@ -85,7 +86,7 @@ category: e.target.value,
 <option value="kafe">Kafé</option>
 <option value="restaurant">Restaurant</option>
 <option value="bar">Bar</option>
-<option value="butikk">Butikk</option>
+<option value="hotell">Hotell</option>
 </select>
  
 <input
@@ -123,6 +124,9 @@ comment: e.target.value,
 }
 />
  
+<div>
+<strong>Hvor er hunder velkomne?</strong>
+ 
 <label>
 <input
 type="checkbox"
@@ -134,15 +138,28 @@ dogs_inside: e.target.checked,
 })
 }
 />
-{" "}Hunder er velkomne innendørs
+Innendørs
 </label>
- 
+<label>
+<input
+type="checkbox"
+checked={formData.dogs_outside}
+onChange={(e) =>
+setFormData({
+...formData,
+dogs_outside: e.target.checked,
+})
+}
+/>
+Utendørs
+</label>
+</div>
 <button
 type="submit"
-className="login-button"
+className="instagram-button"
 >
-Send inn forslag
-</button>
+  Send inn forslag
+  </button>
 </form>
 )}
 
