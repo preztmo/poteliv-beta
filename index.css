@@ -632,7 +632,9 @@ margin-bottom: 3rem;
 margin-bottom: 1rem;
 }
 .favorite-count {
+display: block;
+margin-top: 0.5rem;
 color: var(--color-accent);
 font-size: 0.95rem;
-margin-top: 0.5rem;
+font-weight: 500;
 }

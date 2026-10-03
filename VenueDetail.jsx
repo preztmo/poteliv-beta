@@ -95,14 +95,8 @@ onClick={toggleFavorite}
 >
 {isFavorite ? "♥ Lagret" : "♡ Lagre som favoritt"}
 </button>
-<p
-style={{
-color: "red",
-fontSize: "24px",
-fontWeight: "bold",
-}}
->
-TEST FAVORITTER {favoriteCount}
+<p className="favorite-count">
+♥ Lagret av {favoriteCount} bruker{favoriteCount === 1 ? "" : "e"}
 </p>
 
           <h2>Fasiliteter</h2>
