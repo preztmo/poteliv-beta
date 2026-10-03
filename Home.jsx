@@ -94,6 +94,14 @@ Number(savedScroll)
 }, []);
 
 useEffect(() => {
+const savedVisibleCount =
+sessionStorage.getItem("visibleCount");
+if (savedVisibleCount) {
+setVisibleCount(Number(savedVisibleCount));
+}
+}, []);
+
+useEffect(() => {
 const params = {}
 if (query) {
 params.q = query
