@@ -22,7 +22,6 @@ export default function ArticleDetail() {
       <article>
         <div className="article-detail__photo" style={{ backgroundImage: `url(${article.image})` }} />
         <h1>{article.title}</h1>
-        <p className="article-card__meta">{article.readMinutes} min lesing</p>
         {article.body.map((para, i) => (
           <p key={i}>{para}</p>
         ))}
