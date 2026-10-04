@@ -185,7 +185,7 @@ return results
       <section className="hero">
         <h1>Finn steder der hunden din er like velkommen som deg</h1>
         <p>
-          Poteliv samler kafeer, restauranter, barer og butikker der hunden får bli med inn –
+          Poteliv samler kafeer, restauranter, barer og hoteller der hunden får bli med inn –
           vurdert av andre hundeeiere.
         </p>
         <SearchBar value={query} onChange={setQuery} />

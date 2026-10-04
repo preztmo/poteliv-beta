@@ -1,7 +1,7 @@
 export default function TipUsButton() {
 return (
 <a
-href="mailto:hei@poteliv.no?subject=Tips til Poteliv"
+href="/om-oss#meld-inn-sted"
 className="tip-us-button"
 >
 💬 Tips oss

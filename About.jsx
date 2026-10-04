@@ -36,7 +36,7 @@ return (
       </p>
       <hr />
  
-<h2>🐾 Meld inn et sted</h2>
+<h2 id="meld-inn-sted">🐾 Meld inn et sted</h2>
 <p>
 Savner du et hundevennlig sted på Poteliv?
 Send inn et tips, så vurderer vi det for publisering.

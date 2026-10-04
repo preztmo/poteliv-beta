@@ -73,7 +73,7 @@ Vilkår
         <p className="footer-fine">
           Poteliv er en uavhengig, gratis tjeneste for hundeeiere. Driver du et hundevennlig
           sted?{' '}
-          <a href="mailto:hei@poteliv.no">Meld det inn her</a>.
+          <a href="/om-oss#meld-inn-sted">Meld det inn her</a>.
         </p>
       </footer>
       <BackToTop />
