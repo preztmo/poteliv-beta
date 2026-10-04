@@ -109,14 +109,9 @@ onClick={() => navigate(-1)}
               </a>
               )}
             </div>
-            <button
-className="favorite-button"
-onClick={toggleFavorite}
-></button>
 <button
 className="favorite-button"
-onClick={toggleFavorite}
->
+onClick={toggleFavorite}>
 {isFavorite ? "♥ Lagret" : "♡ Lagre som favoritt"}
 </button>
 <p className="favorite-count">
