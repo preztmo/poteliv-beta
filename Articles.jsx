@@ -14,7 +14,6 @@ export default function Articles() {
             <div className="article-card__body">
               <h2>{a.title}</h2>
               <p>{a.excerpt}</p>
-              <span className="article-card__meta">{a.readMinutes} min lesing</span>
             </div>
           </Link>
         ))}
