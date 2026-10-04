@@ -2763,6 +2763,19 @@ photo: 'https://premium.vgc.no/ap/images/d32b98d3-b788-4364-a6a5-d41c049e5f93?fi
 website: 'https://www.rugantino.no/',
 instagram: 'https://www.instagram.com/vinbaren.paa.molla/',
 },
+{
+id: 'strawberry-hotels',
+name: 'Strawberry Hotels',
+category: 'hotel',
+address: 'Flere steder i Norge',
+lat: 0,
+lng: 0,
+amenities: ['lov_innendors'],
+blurb: 'Strawberry Hotels er en kjede av hoteller som ønsker hunder velkommen. De har flere hoteller i Norge, og tilbyr hundevennlige rom og fasiliteter.',
+photo: 'https://kampsport.no/wp-content/uploads/2026/03/Strawberry-mansikka-logo.png',
+website: 'https://www.strawberry.no/baerekraft/dyrevennlig/',
+instagram: 'https://www.instagram.com/strawberry/',
+},
 ]
 
 export const AMENITY_LABELS = {
