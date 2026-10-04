@@ -2766,7 +2766,7 @@ instagram: 'https://www.instagram.com/vinbaren.paa.molla/',
 {
 id: 'strawberry-hotels',
 name: 'Strawberry Hotels',
-category: 'hotel',
+category: 'hotell',
 address: 'Flere steder i Norge',
 lat: 0,
 lng: 0,

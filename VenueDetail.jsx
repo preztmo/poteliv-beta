@@ -94,6 +94,25 @@ onClick={() => navigate(-1)}
           </div>
 
           <p className="venue-detail__blurb">{venue.blurb}</p>
+          <div className="venue-links">
+            {venue.website && (
+              <a href={venue.website}
+              target="_blank">
+              🌐 Nettside
+              </a>
+              )}
+              {venue.instagram && (
+                <a
+                href={venue.instagram}
+                target="_blank">
+                  📷 Instagram
+              </a>
+              )}
+            </div>
+            <button
+className="favorite-button"
+onClick={toggleFavorite}
+></button>
 <button
 className="favorite-button"
 onClick={toggleFavorite}
