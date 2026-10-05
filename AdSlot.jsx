@@ -4,7 +4,7 @@ export default function AdSlot({ label = 'Annonseplass' }) {
   return (
     <div className="ad-slot" aria-label={label}>
       <span>{label}</span>
-      <p>Ledig for lokale hundevennlige aktører</p>
+      <p>Ledig for hundevennlige aktører</p>
     </div>
   )
 }
