@@ -1788,7 +1788,6 @@ photo: 'https://visitlokka.no/wp-content/uploads/2023/09/IMG_4098.jpeg',
 website: '',
 instagram: 'https://www.facebook.com/fomotooslo',
 },
-
 {
 id: 'palace-grill-bar',
 name: 'Palace Grill Bar',
