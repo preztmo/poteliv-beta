@@ -32,6 +32,7 @@ return (
         <VenueCard
         key={venue.id}
         venue={venue}
+        isFavorite={true}
         />
         ))}
 </div>
