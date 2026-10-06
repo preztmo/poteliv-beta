@@ -714,17 +714,11 @@ display: block;
 display: none;
 }
 }
-.share-desktop {
-display: none;
-}
-.share-mobile {
-display: block;
-}
 @media (min-width: 768px) {
 .share-desktop {
 display: flex;
 justify-content: flex-end;
-margin: 24px 0;
+margin: 8px 0;
 }
 .share-mobile {
 display: none;
