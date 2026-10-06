@@ -9,6 +9,9 @@ barer og hoteller i Norge.
 </p>
 <h3>Koster det noe å bruke Poteliv?</h3>
 <p>Nei, Poteliv er helt gratis å bruke.</p>
+<h3>Må jeg ha en brukerkonto?</h3>
+<p>Nei, du kan bruke Poteliv uten å lage en brukerkonto.</p>
+<p>Hvis du logger inn med din epost, så kan du lagre de stedene du liker som favoritter. Da vil du alltid ha klart en favorittkafé, bar eller restaurant.</p>
 <h3>Hvordan kan jeg foreslå et nytt sted?</h3>
 <p>
 Send oss gjerne en melding via Instagram, på e-post eller via skjemaet på "om oss"-siden dersom du kjenner til et
