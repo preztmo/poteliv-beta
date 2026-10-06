@@ -700,3 +700,17 @@ background: #f3f4f6;
 color: inherit;
 font-weight: 600;
 }
+.share-desktop {
+display: none;
+}
+.share-mobile {
+display: block;
+}
+@media (min-width: 768px) {
+.share-desktop {
+display: block;
+}
+.share-mobile {
+display: none;
+}
+}

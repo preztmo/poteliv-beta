@@ -128,19 +128,41 @@ onClick={toggleFavorite}>
               </li>
             ))}
 </ul>
-
+<div className="share-desktop">
+<button
+className="share-button"
+onClick={() => {
+if (navigator.share) {
+navigator.share({
+title: venue.name,
+text: `Sjekk ut ${venue.name} på Poteliv 🐾`,
+url: window.location.href,
+});
+}
+}}
+>
+Del med en venn
+</button>
+</div>
           <h2>Kart og veibeskrivelse</h2>
           <MapView venues={[venue]} center={[venue.lat, venue.lng]} zoom={15} height={280} />
           <p className="venue-detail__address">{venue.address}</p>
           <DirectionsButton venue={venue} />
         </div>
 
-        <button className="share-button" onClick={() => {if (navigator.share)
-        {navigator.share({title: venue.name, text: 
-          `Sjekk ut ${venue.name} på Poteliv 🐾`, url: window.location.href,});}
+      <div className="share-mobile">
+<button className="share-button" onClick={() => {
+if (navigator.share) {
+navigator.share({
+title: venue.name,
+text: `Sjekk ut ${venue.name} på Poteliv 🐾`,
+url: window.location.href,
+});
+}
 }}>
 Del med en venn
 </button>
+</div>
 
         <aside className="venue-detail__sidebar">
           <AdSlot label="Reklameplass" />
