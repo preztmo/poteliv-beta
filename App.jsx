@@ -13,6 +13,7 @@ import Personvern from "./Personvern";
 import Vilkar from "./Vilkar";
 import Favorites from "./Favorites";
 import Popular from "./Popular";
+import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {
   return (
@@ -78,6 +79,7 @@ Vilkår
       </footer>
       <BackToTop />
       <TipUsButton />
+      <Analytics />
     </div>
   )
 }
