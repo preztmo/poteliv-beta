@@ -217,20 +217,20 @@ sessionStorage.removeItem("visibleCount");
           <button className={view === 'kart' ? 'chip chip--active' : 'chip'} onClick={() => setView('kart')}>
             Kart
           </button>
-          <button className="chip chip--active" onClick={findNearby}>
-            📍 Nær meg
-            </button>
-            {userLocation && (
-<button
-className="chip"
+         <button
+className={userLocation ? 'chip chip--active' : 'chip'}
 onClick={() => {
+if (userLocation) {
 setUserLocation(null);
 sessionStorage.removeItem("userLocation");
+} else {
+findNearby();
+}
 }}
 >
-✕ Vis alle
+📍 Nær meg
 </button>
-)}
+)
         </div>
       </div>
 
