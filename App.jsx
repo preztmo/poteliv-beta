@@ -5,7 +5,6 @@ import VenueDetail from './VenueDetail.jsx'
 import Articles from './Articles.jsx'
 import ArticleDetail from './ArticleDetail.jsx'
 import About from './About.jsx'
-import Newsletter from './Newsletter.jsx'
 import BackToTop from "./components/BackToTop";
 import TipUsButton from "./components/TipUsButton";
 import FAQ from "./FAQ";
@@ -56,7 +55,6 @@ export default function App() {
 
 
       <footer className="site-footer">
-        <Newsletter />
         <a href="https://instagram.com/potelivno" 
         target="_blank" 
         rel="noopener noreferrer"
