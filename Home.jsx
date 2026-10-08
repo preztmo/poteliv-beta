@@ -230,7 +230,6 @@ findNearby();
 >
 📍 Nær meg
 </button>
-)
         </div>
       </div>
 
