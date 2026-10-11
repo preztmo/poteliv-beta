@@ -3141,6 +3141,19 @@ photo: 'https://res.cloudinary.com/djew0njor/image/upload/v1624880555/PpeH7K5EgA
 website: 'https://ostolbar-booking.munu.shop/',
 instagram: 'https://www.instagram.com/olsvetteogtarer/?hl=nb',
 },
+{
+  id: 'brasserie-france',
+  name: 'Brasserie France',
+  category: 'restaurant',
+  address: 'Øvre Slottsgate 16, 0157 Oslo, Norge',
+  lat: 59.91309671067025,
+  lng: 10.742637020995991,
+  amenities: ['lov_innendors', 'lov_utendors'],
+  blurb: 'Fransk brasserie midt i Oslo hvor hunder er velkommen både inne og ute.',
+  photo: 'https://premium.vgc.no/ap/images/4fb4a746-893f-4d02-bfac-4a34a52569e0?fit=crop&h=1536&q=80&tight=true&w=980',
+  website: 'https://www.brasseriefrance.no/',
+  instagram: 'https://www.instagram.com/brasseriefrance/',
+},
 
 ]
 
