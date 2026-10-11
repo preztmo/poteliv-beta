@@ -66,7 +66,7 @@ onClick={toggleFavorite}
         <h3>{venue.name}</h3>
         <p className="venue-card__address">{venue.address}</p>
         <ul className="venue-card__amenities">
-          {venue.amenities.slice.map((a) => (
+          {venue.amenities.slice(0, 3).map((a) => (
             <li key={a}>{AMENITY_ICONS[a]}</li>
           ))}
         </ul>
