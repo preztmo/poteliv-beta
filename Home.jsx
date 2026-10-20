@@ -236,7 +236,7 @@ findNearby();
       {filtered.length === 0 ? (
         <p className="empty-state">Ingen treff. Prøv et annet søk eller en annen kategori.</p>
       ) : view === 'kart' ? (
-        <MapView venues={venues} height={480} />
+        <MapView venues={venues} center={[59.9139, 10.7522]} userLocation={userLocation} height={480} />
       ) : (
 <>
 <p className="results-count">

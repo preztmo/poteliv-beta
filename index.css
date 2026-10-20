@@ -383,6 +383,35 @@ color: var(--color-accent);
   filter: drop-shadow(0 2px 2px rgba(0,0,0,0.35));
 }
 
+.map-user-pin {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+}
+
+.map-user-pin__dot {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  background: #1677ff;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+}
+
+.map-user-pin__label {
+  padding: 4px 7px;
+  background: #1677ff;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
 .venue-detail__address {
   font-size: 0.9rem;
   color: var(--color-ink-soft);
