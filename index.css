@@ -135,6 +135,13 @@ main {
   background: var(--color-bg-alt);
   padding: clamp(1.5rem, 4vw, 3rem);
 }
+
+@media (max-width: 720px) {
+  .site-footer {
+    padding-bottom: calc(7rem + env(safe-area-inset-bottom));
+  }
+}
+
 .footer-links {
 display: flex;
 justify-content: center;
