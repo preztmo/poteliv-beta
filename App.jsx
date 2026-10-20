@@ -6,6 +6,7 @@ import Articles from './Articles.jsx'
 import ArticleDetail from './ArticleDetail.jsx'
 import About from './About.jsx'
 import BackToTop from "./components/BackToTop";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import TipUsButton from "./components/TipUsButton";
 import FAQ from "./FAQ";
 import Personvern from "./Personvern";
@@ -17,6 +18,7 @@ import { Analytics } from '@vercel/analytics/react'
 export default function App() {
   return (
     <div className="app-shell">
+      <ScrollToTop />
       <header className="site-header">
         <Link to="/" className="logo">
           <span className="logo-mark" aria-hidden="true">🐾</span>
@@ -81,4 +83,3 @@ Vilkår
     </div>
   )
 }
-
