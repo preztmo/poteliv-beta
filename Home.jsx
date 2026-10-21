@@ -179,6 +179,12 @@ return nearby
 }
 return results
 }, [query, category, userLocation])
+  const categoryResultName = {
+    cafe: 'kafeer',
+    restaurant: 'restauranter',
+    bar: 'barer',
+    hotell: 'hoteller',
+  }[category] ?? 'hundevennlige steder'
 
   return (
     <div className="page page--home">
@@ -233,10 +239,18 @@ findNearby();
         </div>
       </div>
 
-      {filtered.length === 0 ? (
+      {view === 'kart' ? (
+        <>
+          <p className="results-count">
+            {filtered.length} {categoryResultName} funnet{userLocation ? ' nær deg' : ''}
+          </p>
+          {filtered.length === 0 && (
+            <p className="empty-state">Ingen treff. Prøv et annet søk eller en annen kategori.</p>
+          )}
+          <MapView venues={filtered} center={[59.9139, 10.7522]} userLocation={userLocation} height={480} />
+        </>
+      ) : filtered.length === 0 ? (
         <p className="empty-state">Ingen treff. Prøv et annet søk eller en annen kategori.</p>
-      ) : view === 'kart' ? (
-        <MapView venues={venues} center={[59.9139, 10.7522]} userLocation={userLocation} height={480} />
       ) : (
 <>
 <p className="results-count">
