@@ -9,9 +9,14 @@ uteservering: "☀️",
 lov_innendors: "🏠",
 }
 
-export default function VenueCard({ venue, isFavorite }) {
+export default function VenueCard({ venue, isFavorite, distanceKm }) {
   const [favorite, setFavorite] = useState(isFavorite)
   const categoryLabel = CATEGORIES.find((c) => c.id === venue.category)?.label ?? venue.category
+  const formattedDistance = Number.isFinite(distanceKm)
+    ? distanceKm < 1
+      ? `${Math.round(distanceKm * 1000)} m unna`
+      : `${distanceKm.toLocaleString('nb-NO', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} km unna`
+    : null
 const toggleFavorite = async (e) => {
 e.preventDefault()
 e.stopPropagation()
@@ -65,6 +70,7 @@ onClick={toggleFavorite}
 </div>
         <h3>{venue.name}</h3>
         <p className="venue-card__address">{venue.address}</p>
+        {formattedDistance && <p className="venue-card__distance">📍 {formattedDistance}</p>}
         <ul className="venue-card__amenities">
           {venue.amenities.slice(0, 3).map((a) => (
             <li key={a}>{AMENITY_ICONS[a]}</li>

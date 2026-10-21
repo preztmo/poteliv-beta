@@ -33,10 +33,16 @@ searchParams.get('category') || null
   const [view, setView] = useState('liste') // liste | kart
   const [visibleCount, setVisibleCount] = useState(6);
   const [userLocation, setUserLocation] = useState(null);
+  const [locationError, setLocationError] = useState('');
   const [favoriteIds, setFavoriteIds] = useState([]);
   const [popularVenues, setPopularVenues] = useState([]);
 
   const findNearby = () => {
+setLocationError('');
+if (!navigator.geolocation) {
+setLocationError('Posisjon er ikke tilgjengelig i denne nettleseren. Visningen er ikke endret.');
+return;
+}
 navigator.geolocation.getCurrentPosition(
 (position) => {
 const location = {
@@ -44,6 +50,7 @@ lat: position.coords.latitude,
 lng: position.coords.longitude,
 };
 setUserLocation(location);
+setLocationError('');
 sessionStorage.setItem(
 "userLocation",
 JSON.stringify(location)
@@ -51,6 +58,7 @@ JSON.stringify(location)
 },
 (error) => {
 console.error(error);
+setLocationError('Fikk ikke tilgang til posisjonen din. Tillat posisjonstilgang og prøv igjen. Visningen er ikke endret.');
 }
 );
 };
@@ -139,7 +147,7 @@ setPopularVenues(popular);
 };
 loadPopularVenues();
 }, []);
-  const filtered = useMemo(() => {
+  const { filtered, nearbyCount, hasMatches } = useMemo(() => {
 const results = venues.filter((v) => {
 const matchesCategory = category ? v.category === category : true
 const q = query.trim().toLowerCase()
@@ -149,35 +157,30 @@ v.address.toLowerCase().includes(q)
 : true
 return matchesCategory && matchesQuery
 })
+if (!userLocation) {
 results.sort((a, b) => a.name.localeCompare(b.name, 'nb'))
-if (userLocation) {
-const nearby = results.filter((v) => {
-const dist = distance(
+return { filtered: results, nearbyCount: 0, hasMatches: results.length > 0 }
+}
+
+const nearby = results
+.filter((v) => Number.isFinite(v.lat) && Number.isFinite(v.lng))
+.map((v) => ({
+...v,
+distanceKm: distance(
 userLocation.lat,
 userLocation.lng,
 v.lat,
 v.lng
-)
-return dist <= 20
-})
-nearby.sort((a, b) => {
-const distA = distance(
-userLocation.lat,
-userLocation.lng,
-a.lat,
-a.lng
-)
-const distB = distance(
-userLocation.lat,
-userLocation.lng,
-b.lat,
-b.lng
-)
-return distA - distB
-})
-return nearby
+),
+}))
+.filter((v) => v.distanceKm <= 100)
+.sort((a, b) => a.distanceKm - b.distanceKm)
+
+return {
+filtered: nearby.slice(0, 50),
+nearbyCount: nearby.filter((v) => v.distanceKm <= 10).length,
+hasMatches: results.length > 0,
 }
-return results
 }, [query, category, userLocation])
   const categoryResultName = {
     cafe: 'kafeer',
@@ -239,18 +242,37 @@ findNearby();
         </div>
       </div>
 
+      {locationError && (
+        <p className="empty-state" role="status">{locationError}</p>
+      )}
+      {userLocation && (nearbyCount > 0 || filtered.length > 0) && (
+        <p className="results-count" role="status">
+          {nearbyCount > 0
+            ? `📍 ${nearbyCount} steder nær deg (innen 10 km)`
+            : '📍 Viser de nærmeste hundevennlige stedene i ditt område'}
+        </p>
+      )}
+
       {view === 'kart' ? (
         <>
           <p className="results-count">
             {filtered.length} {categoryResultName} funnet{userLocation ? ' nær deg' : ''}
           </p>
           {filtered.length === 0 && (
-            <p className="empty-state">Ingen treff. Prøv et annet søk eller en annen kategori.</p>
+            <p className="empty-state">
+              {userLocation && hasMatches
+                ? 'Fant ingen hundevennlige steder innen 100 km.'
+                : 'Ingen treff. Prøv et annet søk eller en annen kategori.'}
+            </p>
           )}
           <MapView venues={filtered} center={[59.9139, 10.7522]} userLocation={userLocation} height={480} />
         </>
       ) : filtered.length === 0 ? (
-        <p className="empty-state">Ingen treff. Prøv et annet søk eller en annen kategori.</p>
+        <p className="empty-state">
+          {userLocation && hasMatches
+            ? 'Fant ingen hundevennlige steder innen 100 km.'
+            : 'Ingen treff. Prøv et annet søk eller en annen kategori.'}
+        </p>
       ) : (
 <>
 <p className="results-count">
@@ -263,6 +285,7 @@ findNearby();
 <Fragment key={v.id}>
 <VenueCard
 venue={v}
+distanceKm={v.distanceKm}
 isFavorite={favoriteIds.includes(v.id)}
 />
 {(i === 2 || (i + 1) % 15 === 0) && <AdSlot />}

@@ -299,6 +299,13 @@ color: var(--color-accent);
   margin: 0 0 0.6rem;
 }
 
+.venue-card__distance {
+  font-size: 0.85rem;
+  color: var(--color-forest);
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
 .venue-card__amenities {
   list-style: none;
   padding: 0;
