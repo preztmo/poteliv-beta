@@ -5,7 +5,7 @@ export const sanityClient = createClient({
   projectId: import.meta.env.VITE_SANITY_PROJECT_ID || '4nyh6llz',
   dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
   apiVersion: '2026-10-24',
-  useCdn: true,
+  useCdn: false,
 })
 
 const imageBuilder = imageUrlBuilder(sanityClient)
