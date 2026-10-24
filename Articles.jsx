@@ -41,8 +41,8 @@ export default function Articles() {
       ) : (
         <div className="article-grid">
           {articles.map((article) => {
-            const imageUrl = article.mainImage
-              ? urlFor(article.mainImage).width(800).height(450).fit('crop').url()
+            const imageUrl = article.photo
+              ? urlFor(article.photo).width(800).height(450).fit('crop').url()
               : null
 
             return (
