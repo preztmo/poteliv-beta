@@ -220,6 +220,7 @@ findNearby();
         </div>
 
         <SearchBar value={query} onChange={setQuery} />
+           <FilterBar active={category} onChange={setCategory} />
         {(query || category || userLocation) && (
 <button
 className="chip"
@@ -232,7 +233,6 @@ sessionStorage.removeItem("scrollPosition");
 sessionStorage.removeItem("visibleCount");
 }}
 >
-   <FilterBar active={category} onChange={setCategory} />
 ✕ Nullstill filtre
 </button>
 )}
