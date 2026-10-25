@@ -46,7 +46,7 @@ export default function Articles() {
               : null
 
             return (
-              <Link to={`/artikler/${article._id}`} key={article._id} className="article-card">
+              <Link to={`/artikler/${article.slug?.current}`} key={article._id} className="article-card">
                 <div
                   className="article-card__photo"
                   style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : undefined}

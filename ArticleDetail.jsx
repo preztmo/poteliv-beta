@@ -4,7 +4,7 @@ import { PortableText } from '@portabletext/react'
 import { articleByIdQuery, sanityClient, urlFor } from './src/lib/sanity.js'
 
 export default function ArticleDetail() {
-  const { id } = useParams()
+  const {slug} = useParams()
   const [article, setArticle] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -15,7 +15,7 @@ export default function ArticleDetail() {
     setLoading(true)
     setError('')
 
-    sanityClient.fetch(articleByIdQuery, { id })
+    sanityClient.fetch(articleByIdQuery, {slug})
       .then((data) => {
         if (isCurrent) setArticle(data)
       })
@@ -30,7 +30,7 @@ export default function ArticleDetail() {
     return () => {
       isCurrent = false
     }
-  }, [id])
+  }, [slug])
 
   if (loading) {
     return (

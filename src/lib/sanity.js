@@ -17,13 +17,15 @@ export function urlFor(source) {
 export const articlesQuery = `*[_type == "article"] | order(_createdAt desc) {
   _id,
   title,
+  slug,
   intro,
   photo
 }`
 
-export const articleByIdQuery = `*[_type == "article" && _id == $id][0] {
+export const articleByIdQuery = `*[_type == "article" && slug.current == $slug][0] {
   _id,
   title,
+  slug,
   intro,
   content,
   photo

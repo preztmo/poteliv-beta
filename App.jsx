@@ -44,7 +44,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sted/:id" element={<VenueDetail />} />
           <Route path="/artikler" element={<Articles />} />
-          <Route path="/artikler/:id" element={<ArticleDetail />} />
+          <Route path="/artikler/:slug" element={<ArticleDetail />} />
           <Route path="/om-oss" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/favoritter" element={<Favorites />} />
