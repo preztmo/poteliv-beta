@@ -197,7 +197,6 @@ hasMatches: results.length > 0,
           vurdert av andre hundeeiere.
         </p>
         
-        <FilterBar active={category} onChange={setCategory} />
         <div className="view-toggle" role="group" aria-label="Vis som">
           <button className={view === 'liste' ? 'chip chip--active' : 'chip'} onClick={() => setView('liste')}>
             Liste
@@ -233,6 +232,7 @@ sessionStorage.removeItem("scrollPosition");
 sessionStorage.removeItem("visibleCount");
 }}
 >
+   <FilterBar active={category} onChange={setCategory} />
 ✕ Nullstill filtre
 </button>
 )}
