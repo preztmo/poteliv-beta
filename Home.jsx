@@ -188,7 +188,6 @@ hasMatches: results.length > 0,
     bar: 'barer',
     hotell: 'hoteller',
   }[category] ?? 'hundevennlige steder'
-
   return (
     <div className="page page--home">
       <section className="hero">
@@ -197,27 +196,7 @@ hasMatches: results.length > 0,
           Poteliv samler kafeer, restauranter, barer og hoteller der hunden får bli med inn –
           vurdert av andre hundeeiere.
         </p>
-        <SearchBar value={query} onChange={setQuery} />
-        {(query || category || userLocation) && (
-<button
-className="chip"
-onClick={() => {
-setQuery("");
-setCategory(null);
-setUserLocation(null);
-sessionStorage.removeItem("userLocation");
-sessionStorage.removeItem("scrollPosition");
-sessionStorage.removeItem("visibleCount");
-}}
->
-✕ Nullstill filtre
-</button>
-)}
-      </section>
-
-
-
-      <div className="toolbar">
+        
         <FilterBar active={category} onChange={setCategory} />
         <div className="view-toggle" role="group" aria-label="Vis som">
           <button className={view === 'liste' ? 'chip chip--active' : 'chip'} onClick={() => setView('liste')}>
@@ -240,6 +219,28 @@ findNearby();
 📍 Nær meg
 </button>
         </div>
+
+        <SearchBar value={query} onChange={setQuery} />
+        {(query || category || userLocation) && (
+<button
+className="chip"
+onClick={() => {
+setQuery("");
+setCategory(null);
+setUserLocation(null);
+sessionStorage.removeItem("userLocation");
+sessionStorage.removeItem("scrollPosition");
+sessionStorage.removeItem("visibleCount");
+}}
+>
+✕ Nullstill filtre
+</button>
+)}
+      </section>
+
+
+
+      <div className="toolbar">
       </div>
 
       {locationError && (

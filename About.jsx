@@ -31,14 +31,14 @@ return (
         vært der – ikke fra stedene selv. Vi som driver Poteliv er selv hundeeiere, og vi tar jevnlige sjekker av stedene. Dersom du er usikker om hunden din er velkommen, anbefaler vi deg å kontakte stedet direkte.
       </p>
       <p>
-        Driver du et sted og vil bli lagt til, eller ønsker du å høre om annonseplass? Send oss en
+        Driver du et hundevennlig sted og vil ha mer besøk, eller ønsker du å høre om annonseplass? Send oss en
         e-post på <a href="mailto:hei@poteliv.no">hei@poteliv.no</a> eller bruk skjemaet nedenfor.
       </p>
       <hr />
  
 <h2 id="meld-inn-sted">🐾 Meld inn et sted</h2>
 <p>
-Savner du et hundevennlig sted på Poteliv?
+Finner du ikke favorittstedet ditt på Poteliv?
 Send inn et tips, så vurderer vi det for publisering.
 </p>
 
